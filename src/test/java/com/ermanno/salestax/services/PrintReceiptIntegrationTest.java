@@ -79,7 +79,7 @@ public class PrintReceiptIntegrationTest {
     }
 
     @Test
-    public void printReceiptMixedItemsText() {
+    public void printReceiptMixedItemsTest() {
         Item importedPerfume = new Item.Builder()
                                     .withDescription("1 imported bottle of perfume")
                                     .imported(true)

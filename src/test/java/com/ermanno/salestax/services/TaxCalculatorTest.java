@@ -39,19 +39,19 @@ public class TaxCalculatorTest {
     }
 
     @Test
-    public void importDutySalesTaxAppliedToImportedGoods() {
+    public void importDutySalesTaxAppliedToImportedGoodsTest() {
         Item item = new Item.Builder().withDescription("imported item").withPrice(100.0).imported(true).build();
         assertEquals(5.0, taxCalculator.calculateImportDutySales(item), 0);
     }
 
     @Test
-    public void nonImportedMusicShouldPayBasicSalesTax() {
+    public void nonImportedMusicShouldPayBasicSalesTaxTest() {
         Item cd = new Item.Builder().withDescription("1 music CD").withPrice(14.99).build();
         assertEquals(1.5, taxCalculator.calculateBasicSalesTax(cd), 0);
     }
 
     @Test
-    public void nonImportedMusicTaxesShouldntBeZero() {
+    public void nonImportedMusicTaxesShouldntBeZeroTest() {
         Item cd = new Item.Builder().withDescription("1 music CD").withPrice(14.99).build();
         assertEquals(1.5, taxCalculator.calculateTaxes(cd), 0);
     }
