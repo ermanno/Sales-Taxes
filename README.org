@@ -11,7 +11,7 @@ taxes paid. The rounding rules for sales tax are that for a tax rate of n%, a sh
 
 Write an application that prints out the receipt details for these shopping baskets...
 
-#+BEGIN_QUOTE
+#+BEGIN_EXAMPLE
 INPUT:
 
 Input 1:
@@ -51,4 +51,4 @@ Output 3:
 1 imported box of chocolates: 11.85
 Sales Taxes: 6.70
 Total: 74.68
-#+END_QUOTE
+#+END_EXAMPLE
