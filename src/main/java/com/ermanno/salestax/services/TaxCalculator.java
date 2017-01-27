@@ -19,7 +19,7 @@ public interface TaxCalculator {
      * @param item
      * @return
      */
-    double calculateImportDutySales(Item item);
+    double calculateImportDutySalesTax(Item item);
 
     /**
      * 

@@ -36,7 +36,7 @@ public class TaxCalculatorImpl implements TaxCalculator {
      * @see com.ermanno.salestax.services.TaxCalculator#calculateImportDutySales(com.ermanno.salestax.valueobjects.Item)
      */
     @Override
-    public double calculateImportDutySales(final Item item) {
+    public double calculateImportDutySalesTax(final Item item) {
         if (item.isImported())
             return round(item.getPrice() * IMPORT_DUTY_SALES_TAX);
         else
@@ -48,6 +48,6 @@ public class TaxCalculatorImpl implements TaxCalculator {
      */
     @Override
     public double calculateTaxes(final Item item) {
-        return calculateImportDutySales(item) + calculateBasicSalesTax(item);
+        return calculateImportDutySalesTax(item) + calculateBasicSalesTax(item);
     }
 }
