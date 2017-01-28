@@ -9,7 +9,7 @@ Clone the project, then run:
 #+END_SRC
 
 to create the jar file. Note that during this process the =mvn test= phase is executed, which means that the unit and integration tests are run. In particular, the
-=ReceiptGeneratorIntegrationTest= class test the generation of the receipt with the three inputs in the example. I also made a simple client that utilizes the services to create the report
+=ReceiptGeneratorIntegrationTest= class tests the generation of the receipt with the three inputs in the example. I also made a simple client that utilizes the services to create the report
 in the example. To run it, simply type:
 
 #+BEGIN_SRC sh
