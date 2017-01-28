@@ -33,7 +33,7 @@ public class ReceiptGeneratorIntegrationTest {
     @Value(value = "classpath:nonImportedItemsExpectedOutput.txt")
     private Resource nonImportedItems;
     
-    private String getFile(Resource resource) throws IOException{
+    private String getFile(Resource resource) throws IOException {
         File file = resource.getFile();
         String content = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
         return content;

@@ -1,6 +1,21 @@
 * Sales Taxes Problem
 This is my solution to the Sales Taxes problem, written in Java, using Maven as the build system, JUnit for unit and integration testing, and Spring for dependency injection.
 
+** How to run
+Clone the project, then run:
+
+#+BEGIN_SRC sh
+  mvn package
+#+END_SRC
+
+to create the jar file. Note that during this process the =mvn test= phase is executed, which means that the unit and integration tests are run. In particular, the
+=ReceiptGeneratorIntegrationTest= class test the generation of the receipt with the three inputs in the example. I also made a simple client that utilizes the services to create the report
+in the example. To run it, simply type:
+
+#+BEGIN_SRC sh
+  java -jar test/salestax-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+#+END_SRC
+
 ** The problem statement
 Basic sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicable on all imported
 goods at a rate of 5%, with no exemptions.
