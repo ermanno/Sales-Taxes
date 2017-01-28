@@ -67,7 +67,6 @@ public class PrintGeneratorIntegrationTest {
         assertEquals(getFile(nonImportedItems), receipt.createReceiptString(items));
     }
 
-    @Ignore
     @Test
     public void printReceiptImportedItemsTest() throws IOException {
         Item chocolate = new Item.Builder()
@@ -87,7 +86,6 @@ public class PrintGeneratorIntegrationTest {
         assertEquals(getFile(importedItems), receipt.createReceiptString(items));
     }
 
-    @Ignore
     @Test
     public void printReceiptMixedItemsTest() throws IOException {
         Item importedPerfume = new Item.Builder()
