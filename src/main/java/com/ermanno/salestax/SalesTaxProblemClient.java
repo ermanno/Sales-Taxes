@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.ermanno.salestax.config.SalesTaxTestConfig;
+import com.ermanno.salestax.config.SalesTaxConfig;
 import com.ermanno.salestax.services.ReceiptGenerator;
 import com.ermanno.salestax.valueobjects.Item;
 import com.ermanno.salestax.valueobjects.ItemType;
 
 public class SalesTaxProblemClient {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(SalesTaxTestConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(SalesTaxConfig.class);
         ReceiptGenerator receiptGenerator = context.getBean(ReceiptGenerator.class);
         List<Item> input1 = getInput1();
         List<Item> input2 = getInput2();
