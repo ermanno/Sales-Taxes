@@ -24,7 +24,7 @@ import com.ermanno.salestax.valueobjects.ItemType;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SalesTaxTestConfig.class)
-public class PrintGeneratorIntegrationTest {
+public class ReceiptGeneratorIntegrationTest {
     @Value(value = "classpath:importedItemsExpectedOutput.txt")
     private Resource importedItems;
     
