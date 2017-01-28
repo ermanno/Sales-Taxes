@@ -3,9 +3,12 @@ package com.ermanno.salestax.services;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.springframework.stereotype.Service;
+
 import com.ermanno.salestax.valueobjects.Item;
 import com.ermanno.salestax.valueobjects.ItemType;
 
+@Service
 public class TaxCalculatorImpl implements TaxCalculator {
     private static final double ROUND_OFF = 0.05;
     private static final double BASIC_SALES_TAX_RATE = 0.1;

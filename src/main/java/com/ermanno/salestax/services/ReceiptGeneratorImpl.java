@@ -3,9 +3,11 @@ package com.ermanno.salestax.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ermanno.salestax.valueobjects.Item;
 
+@Service
 public class ReceiptGeneratorImpl implements ReceiptGenerator {
     private TaxCalculator taxCalculator;
     
@@ -29,7 +31,7 @@ public class ReceiptGeneratorImpl implements ReceiptGenerator {
             totalPriceAfterTax += priceAfterTax;
             salesTaxes += tax;
         }
-        receiptString.append(String.format("Sales Taxes: %.2f\nTotal: %.2f\n", salesTaxes, totalPriceAfterTax));
+        receiptString.append(String.format("Sales Taxes: %.2f\nTotal: %.2f", salesTaxes, totalPriceAfterTax));
         return receiptString.toString();
     }
 }
