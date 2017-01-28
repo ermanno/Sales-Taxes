@@ -9,20 +9,20 @@ public interface TaxCalculator {
      * @param item the item for which we wish to calculate the basic sales tax.
      * @return the rounded amount of the basic sales tax.
      */
-    double calculateBasicSalesTax(Item item);
+    public double calculateBasicSalesTax(Item item);
 
     /**
      * Returns the import duty sales for the given item.
      * @param item the item for which we wish to calculate the import duty sales tax.
      * @return the rounded amount of the import duty sales tax.
      */
-    double calculateImportDutySalesTax(Item item);
+    public double calculateImportDutySalesTax(Item item);
 
     /**
      * Returns the total amount of taxes applied to the given item.
      * @param item the item for which we wish te calculate the total amount of taxes.
      * @return the rounded amouent of the total amount of taxes.
      */
-    double calculateTaxes(Item item);
+    public double calculateTaxes(Item item);
 
 }
