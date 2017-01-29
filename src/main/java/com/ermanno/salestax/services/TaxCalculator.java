@@ -1,6 +1,6 @@
 package com.ermanno.salestax.services;
 
-import com.ermanno.salestax.item.Item;
+import com.ermanno.salestax.model.Item;
 
 public interface TaxCalculator {
     

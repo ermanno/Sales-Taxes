@@ -1,6 +1,6 @@
-package com.ermanno.salestax.tax;
+package com.ermanno.salestax.model.taxes;
 
-import com.ermanno.salestax.item.Item;
+import com.ermanno.salestax.model.Item;
 
 public class ImportDutySalesTax extends AbstractSalesTax {
 

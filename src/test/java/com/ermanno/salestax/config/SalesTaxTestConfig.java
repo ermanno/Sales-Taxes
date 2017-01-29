@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.ermanno.salestax.model.taxes.BasicSalesTax;
+import com.ermanno.salestax.model.taxes.ImportDutySalesTax;
+import com.ermanno.salestax.model.taxes.Tax;
 import com.ermanno.salestax.services.TaxCalculator;
 import com.ermanno.salestax.services.TaxCalculatorImpl;
-import com.ermanno.salestax.tax.BasicSalesTax;
-import com.ermanno.salestax.tax.ImportDutySalesTax;
-import com.ermanno.salestax.tax.Tax;
 
 @Configuration
 @ComponentScan(basePackages = "com.ermanno.salestax.services")

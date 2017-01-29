@@ -1,4 +1,4 @@
-package com.ermanno.salestax.item;
+package com.ermanno.salestax.model;
 
 public class Item {
     public static class Builder {

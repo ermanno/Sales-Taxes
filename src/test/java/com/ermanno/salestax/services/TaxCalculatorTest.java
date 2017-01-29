@@ -10,11 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ermanno.salestax.config.SalesTaxTestConfig;
-import com.ermanno.salestax.item.Item;
-import com.ermanno.salestax.item.ItemType;
-import com.ermanno.salestax.tax.BasicSalesTax;
-import com.ermanno.salestax.tax.ImportDutySalesTax;
-import com.ermanno.salestax.tax.Tax;
+import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.ItemType;
+import com.ermanno.salestax.model.taxes.BasicSalesTax;
+import com.ermanno.salestax.model.taxes.ImportDutySalesTax;
+import com.ermanno.salestax.model.taxes.Tax;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SalesTaxTestConfig.class)

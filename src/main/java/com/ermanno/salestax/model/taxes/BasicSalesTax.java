@@ -1,10 +1,10 @@
-package com.ermanno.salestax.tax;
+package com.ermanno.salestax.model.taxes;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import com.ermanno.salestax.item.Item;
-import com.ermanno.salestax.item.ItemType;
+import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.ItemType;
 
 public class BasicSalesTax extends AbstractSalesTax {
 

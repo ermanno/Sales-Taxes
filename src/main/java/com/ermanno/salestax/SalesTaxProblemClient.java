@@ -7,8 +7,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ermanno.salestax.config.SalesTaxConfig;
-import com.ermanno.salestax.item.Item;
-import com.ermanno.salestax.item.ItemType;
+import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.ItemType;
 import com.ermanno.salestax.services.ReceiptGenerator;
 
 public class SalesTaxProblemClient {

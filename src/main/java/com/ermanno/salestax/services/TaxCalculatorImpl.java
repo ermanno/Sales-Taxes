@@ -2,8 +2,8 @@ package com.ermanno.salestax.services;
 
 import java.util.List;
 
-import com.ermanno.salestax.item.Item;
-import com.ermanno.salestax.tax.Tax;
+import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.taxes.Tax;
 
 public class TaxCalculatorImpl implements TaxCalculator {
     private List<Tax> taxes;
