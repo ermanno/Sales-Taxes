@@ -3,10 +3,11 @@ package com.ermanno.salestax.tax;
 import com.ermanno.salestax.item.Item;
 
 public abstract class AbstractSalesTax implements Tax {
-    protected static double round_off = 0.05;
     
     protected double round(final double number) {
-        return Math.ceil(number / round_off) * round_off;
+        // See http://stackoverflow.com/questions/11815135/best-method-to-round-up-to-the-nearest-0-05-in-java
+        // to understand why this is better than BigDecimal or long.
+        return Math.round(number * 20) / 20.0; // round up to multiple of 0.05
     }
     
     protected abstract double calculateSalesTax(Item item);

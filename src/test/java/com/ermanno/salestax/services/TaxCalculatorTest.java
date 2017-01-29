@@ -85,7 +85,7 @@ public class TaxCalculatorTest {
     public void importedPerfumeShouldPayImportDutySalesTax() {
         Item item = new Item.Builder().withDescription("1 imported bottle of perfume")
                 .withPrice(47.50).imported(true).build();
-        assertEquals(2.74, importDutySalesTax.calculateTax(item), 0);        
+        assertEquals(2.4, importDutySalesTax.calculateTax(item), 0);        
     }
     
     @Test
