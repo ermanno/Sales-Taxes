@@ -18,8 +18,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ermanno.salestax.config.SalesTaxTestConfig;
-import com.ermanno.salestax.valueobjects.Item;
-import com.ermanno.salestax.valueobjects.ItemType;
+import com.ermanno.salestax.item.Item;
+import com.ermanno.salestax.item.ItemType;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SalesTaxTestConfig.class)

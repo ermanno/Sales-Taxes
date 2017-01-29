@@ -2,7 +2,7 @@ package com.ermanno.salestax.services;
 
 import java.util.List;
 
-import com.ermanno.salestax.valueobjects.Item;
+import com.ermanno.salestax.item.Item;
 
 public interface ReceiptGenerator {
 

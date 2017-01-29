@@ -1,23 +1,9 @@
 package com.ermanno.salestax.services;
 
-import com.ermanno.salestax.valueobjects.Item;
+import com.ermanno.salestax.item.Item;
 
 public interface TaxCalculator {
-
-    /**
-     * Returns the basic sales tax for the given item.
-     * @param item the item for which we wish to calculate the basic sales tax.
-     * @return the rounded amount of the basic sales tax.
-     */
-    public double calculateBasicSalesTax(Item item);
-
-    /**
-     * Returns the import duty sales for the given item.
-     * @param item the item for which we wish to calculate the import duty sales tax.
-     * @return the rounded amount of the import duty sales tax.
-     */
-    public double calculateImportDutySalesTax(Item item);
-
+    
     /**
      * Returns the total amount of taxes applied to the given item.
      * @param item the item for which we wish te calculate the total amount of taxes.
