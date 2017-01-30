@@ -8,7 +8,7 @@ import com.ermanno.salestax.model.Item;
 import com.ermanno.salestax.model.ItemType;
 import com.ermanno.salestax.model.Money;
 
-public class BasicSalesTax implements Tax {
+public class BasicSalesTax extends AbstractSalesTax {
 
     protected static BigDecimal rate = new BigDecimal("0.1");
     protected static Collection<ItemType> itemsExcludedFromBasicSalesTax = 
@@ -19,7 +19,7 @@ public class BasicSalesTax implements Tax {
     }
     
     @Override
-    public Money calculateTax(Item item) {
+    public Money calculateSalesTax(Item item) {
         if (isExcludedFromBasicSalesTax(item))
             return new Money("0.00");
         else

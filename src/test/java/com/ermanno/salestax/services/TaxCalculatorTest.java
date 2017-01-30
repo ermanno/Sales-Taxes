@@ -86,13 +86,15 @@ public class TaxCalculatorTest {
     public void importedPerfumeShouldPayImportDutySalesTax() {
         Item item = new Item.Builder().withDescription("1 imported bottle of perfume")
             .withPrice(new Money("47.50")).imported(true).build();
-        assertTrue(new Money("2.40").compareTo(importDutySalesTax.calculateTax(item)) == 0);        
+        System.out.println("-->" + importDutySalesTax.calculateTax(item));
+        assertTrue(new Money("2.40").compareTo(importDutySalesTax.calculateTax(item)) == 0);     
     }
     
     @Test
     public void importedPerfumeShouldPayTaxTest() {
         Item item = new Item.Builder().withDescription("1 imported bottle of perfume")
             .withPrice(new Money("47.50")).imported(true).build();
-        assertTrue(new Money("7.150").compareTo(taxCalculator.calculateTaxes(item)) == 0);
+        System.out.println(taxCalculator.calculateTaxes(item));
+        assertTrue(new Money("7.15").compareTo(taxCalculator.calculateTaxes(item)) == 0);
     }
 }
