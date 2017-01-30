@@ -1,6 +1,7 @@
 package com.ermanno.salestax.model.taxes;
 
 import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.Money;
 
 public interface Tax {  
     /**
@@ -8,5 +9,5 @@ public interface Tax {
      * @param item the item to which we want to apply the tax.
      * @return the tax amount.
      */
-    public double calculateTax(Item item);
+    public Money calculateTax(Item item);
 }

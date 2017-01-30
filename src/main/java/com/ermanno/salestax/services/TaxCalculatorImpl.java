@@ -3,6 +3,7 @@ package com.ermanno.salestax.services;
 import java.util.List;
 
 import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.Money;
 import com.ermanno.salestax.model.taxes.Tax;
 
 public class TaxCalculatorImpl implements TaxCalculator {
@@ -13,10 +14,10 @@ public class TaxCalculatorImpl implements TaxCalculator {
     }
 
     @Override
-    public double calculateTaxes(final Item item) {
-        double total = 0;
+    public Money calculateTaxes(final Item item) {
+        Money total = new Money("0.00");
         for (Tax tax : taxes)
-            total += tax.calculateTax(item);
+            total.add(tax.calculateTax(item));
         return total;
     }
 }

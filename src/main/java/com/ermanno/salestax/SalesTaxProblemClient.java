@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ermanno.salestax.config.SalesTaxConfig;
 import com.ermanno.salestax.model.Item;
 import com.ermanno.salestax.model.ItemType;
+import com.ermanno.salestax.model.Money;
 import com.ermanno.salestax.services.ReceiptGenerator;
 
 public class SalesTaxProblemClient {
@@ -36,13 +37,13 @@ public class SalesTaxProblemClient {
         Item book = new Item.Builder()
                          .withDescription("1 book")
                          .withType(ItemType.BOOK)
-                         .withPrice(12.49)
+                         .withPrice(new Money("12.49"))
                          .build();
-        Item cd = new Item.Builder().withDescription("1 music CD").withPrice(14.99).build();
+        Item cd = new Item.Builder().withDescription("1 music CD").withPrice(new Money("14.99")).build();
         Item chocolate = new Item.Builder()
                               .withDescription("1 chocolate bar")
                               .withType(ItemType.FOOD)
-                              .withPrice(0.85)
+                              .withPrice(new Money("0.85"))
                               .build();
         List<Item> items = new ArrayList<>();
         items.add(book);
@@ -56,12 +57,12 @@ public class SalesTaxProblemClient {
                               .withDescription("1 imported box of chocolates")
                               .withType(ItemType.FOOD)
                               .imported(true)
-                              .withPrice(10.00)
+                              .withPrice(new Money("10.00"))
                               .build();
         Item perfume = new Item.Builder()
                             .withDescription("1 imported bottle of perfume")
                             .imported(true)
-                            .withPrice(47.50)
+                            .withPrice(new Money("47.50"))
                             .build();
         List<Item> items = new ArrayList<>();
         items.add(chocolate);
@@ -73,19 +74,19 @@ public class SalesTaxProblemClient {
         Item importedPerfume = new Item.Builder()
                                     .withDescription("1 imported bottle of perfume")
                                     .imported(true)
-                                    .withPrice(27.99)
+                                    .withPrice(new Money("27.99"))
                                     .build();
-        Item perfume = new Item.Builder().withDescription("1 bottle of perfume").withPrice(18.99).build();
+        Item perfume = new Item.Builder().withDescription("1 bottle of perfume").withPrice(new Money("18.99")).build();
         Item pills = new Item.Builder()
                           .withDescription("1 packet of headache pills")
                           .withType(ItemType.MEDICINE)
-                          .withPrice(9.75)
+                          .withPrice(new Money("9.75"))
                           .build();
         Item importedChocolate = new Item.Builder()
                                       .withDescription("1 imported box of chocolates")
                                       .withType(ItemType.FOOD)
                                       .imported(true)
-                                      .withPrice(11.25)
+                                      .withPrice(new Money("11.25"))
                                       .build();
         List<Item> items = new ArrayList<>();
         items.add(importedPerfume);

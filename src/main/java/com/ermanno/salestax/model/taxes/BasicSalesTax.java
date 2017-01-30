@@ -1,14 +1,16 @@
 package com.ermanno.salestax.model.taxes;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collection;
 
 import com.ermanno.salestax.model.Item;
 import com.ermanno.salestax.model.ItemType;
+import com.ermanno.salestax.model.Money;
 
-public class BasicSalesTax extends AbstractSalesTax {
+public class BasicSalesTax implements Tax {
 
-    protected static double basicSalesTaxRate = 0.1;
+    protected static BigDecimal rate = new BigDecimal("0.1");
     protected static Collection<ItemType> itemsExcludedFromBasicSalesTax = 
             Arrays.asList(ItemType.BOOK, ItemType.FOOD, ItemType.MEDICINE);
     
@@ -17,11 +19,11 @@ public class BasicSalesTax extends AbstractSalesTax {
     }
     
     @Override
-    public double calculateSalesTax(Item item) {
+    public Money calculateTax(Item item) {
         if (isExcludedFromBasicSalesTax(item))
-            return 0;
+            return new Money("0.00");
         else
-            return item.getPrice() * basicSalesTaxRate;
+            return item.getPrice().percentage(rate);
     }
     
 }

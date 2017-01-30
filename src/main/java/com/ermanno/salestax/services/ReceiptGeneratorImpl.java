@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ermanno.salestax.model.Item;
+import com.ermanno.salestax.model.Money;
 
 @Service
 public class ReceiptGeneratorImpl implements ReceiptGenerator {
@@ -22,14 +23,14 @@ public class ReceiptGeneratorImpl implements ReceiptGenerator {
     @Override
     public String createReceiptString(List<Item> shoppingBasket) {
         StringBuilder receipt = new StringBuilder();
-        double totalPriceAfterTax = 0;
-        double salesTaxes = 0;
+        Money totalPriceAfterTax = new Money("0.00");
+        Money salesTaxes = new Money("0.00");
         for (Item item : shoppingBasket) {
-            double tax = taxCalculator.calculateTaxes(item);
-            double priceAfterTax = item.getPrice() + tax;
+            Money tax = taxCalculator.calculateTaxes(item);
+            Money priceAfterTax = item.getPrice().add(tax);
             receipt.append(String.format("%s: %.2f\n", item.getDescription(), priceAfterTax));
-            totalPriceAfterTax += priceAfterTax;
-            salesTaxes += tax;
+            totalPriceAfterTax.add(priceAfterTax);
+            salesTaxes.add(tax);
         }
         receipt.append(String.format("Sales Taxes: %.2f\nTotal: %.2f", salesTaxes, totalPriceAfterTax));
         return receipt.toString();

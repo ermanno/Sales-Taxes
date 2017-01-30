@@ -3,7 +3,7 @@ package com.ermanno.salestax.model;
 public class Item {
     public static class Builder {
         private String description;
-        private double price;
+        private Money price;
         private boolean isImported = false;
         private ItemType type = ItemType.OTHER;
 
@@ -12,7 +12,7 @@ public class Item {
             return this;
         }
 
-        public Builder withPrice(final double price) {
+        public Builder withPrice(final Money price) {
             this.price = price;
             return this;
         }
@@ -28,18 +28,18 @@ public class Item {
         }
 
         public Item build() {
-            if (price < 0)
+            if (price.compareTo(new Money("0.00")) <= 0)
                 throw new IllegalStateException("Cannot create item with negative price");
             return new Item(description, price, isImported, type);
         }
     }
 
     private final String description;
-    private final double price;
+    private final Money price;
     private final boolean isImported;
     private final ItemType type;
 
-    private Item(final String description, final double price, final boolean isImported, final ItemType type) {
+    private Item(final String description, final Money price, final boolean isImported, final ItemType type) {
         this.description = description;
         this.price = price;
         this.isImported = isImported;
@@ -50,7 +50,7 @@ public class Item {
         return description;
     }
 
-    public double getPrice() {
+    public Money getPrice() {
         return price;
     }
 
