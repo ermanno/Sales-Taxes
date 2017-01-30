@@ -3,6 +3,12 @@ package com.ermanno.salestax.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Using Fowler's Money pattern to handle currency. Could be extended to handle multiple currencies (USD, EUR, ...).
+ * Example in PHP: https://dzone.com/articles/practical-php-patterns/basic/practical-php-patterns-money).
+ * @author ermanno
+ *
+ */
 public class Money implements Comparable<Money> {
     private static final RoundingMode DEFAULT_ROUNDING = RoundingMode.HALF_UP;
     private static final int scale = 2;

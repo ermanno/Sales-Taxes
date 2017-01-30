@@ -28,11 +28,11 @@ public class ReceiptGeneratorImpl implements ReceiptGenerator {
         for (Item item : shoppingBasket) {
             Money tax = taxCalculator.calculateTaxes(item);
             Money priceAfterTax = item.getPrice().add(tax);
-            receipt.append(String.format("%s: %.2f\n", item.getDescription(), priceAfterTax));
+            receipt.append(String.format("%s: %s\n", item.getDescription(), priceAfterTax));
             totalPriceAfterTax.add(priceAfterTax);
             salesTaxes.add(tax);
         }
-        receipt.append(String.format("Sales Taxes: %.2f\nTotal: %.2f", salesTaxes, totalPriceAfterTax));
+        receipt.append(String.format("Sales Taxes: %s\nTotal: %s", salesTaxes, totalPriceAfterTax));
         return receipt.toString();
     }
 }
